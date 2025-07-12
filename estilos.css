@@ -3,8 +3,8 @@
 :root {
   --bg-color: #faf8f8e0;
   --card-bg: #ffffff;
-  --primary-color: #25d366;
-  --hover-color: #1ebe57;
+  --primary-color: #55aff8fb;
+  --hover-color: #55aff8fb;
   --text-color: #333;
   --border-color: #e0e0e0;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -252,9 +252,10 @@ body {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 2px 8px rgba(6, 6, 6, 0.5);
   align-self: center;
-  margin-top: 15px;
+  margin-top: 5px;
+  background-color: #25d366;
 }
 
 
