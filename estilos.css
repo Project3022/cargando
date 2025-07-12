@@ -411,7 +411,7 @@ body {
   min-height: 3.0em; /* 3 líneas de texto, con line-height 1.3em */
   line-height: 1.3em;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
