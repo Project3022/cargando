@@ -407,14 +407,15 @@ body {
   }
 }
 .descripcion .short-desc {
-  min-height: 3.9em; /* 3 líneas de texto, con line-height 1.3em */
+  min-height: 3.0em; /* 3 líneas de texto, con line-height 1.3em */
   line-height: 1.3em;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 
