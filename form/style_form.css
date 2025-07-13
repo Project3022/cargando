@@ -1,0 +1,156 @@
+
+    :root {
+      --bg-color: #f9f9f9;
+      --primary-color: #25d366;
+      --text-color: #333;
+      --border-color: #ccc;
+      --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      font-size: 14px;
+      background: #fff;
+      transition: box-shadow 0.3s ease;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--primary-color);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #20b158;
+    }
+
+    #spinner {
+      display: none;
+      margin-left: 10px;
+      font-size: 1.2em;
+      animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #imagePreview {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .preview-container {
+      position: relative;
+    }
+
+    .preview-container img {
+      max-width: 90px;
+      max-height: 90px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid var(--border-color);
+    }
+
+    .remove-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 10px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  padding: 0;
+}
+
+    @media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="file"],
+  select,
+  button {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .preview-container img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+  .remove-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+}
+
+#spinner {
+  display: none;
+  font-size: 2rem; /* Más grande */
+  animation: spin 1.2s infinite linear;
+  text-align: center;
+  margin-top: 15px;
+}
