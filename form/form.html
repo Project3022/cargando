@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Multishop - Venta de productos electrónicos, ropa, accesorios y más al mejor precio." />
+  <meta name="keywords" content="tienda, electrónicos, ropa, perfumes, multishop, mercado, online" />
+  <meta name="author" content="Multishop" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Multishop - Todo en un solo lugar" />
+  <meta property="og:description" content="Descubre los mejores productos y compra fácil por WhatsApp." />
+  <meta property="og:image" content="https://storemultishop.com/MarkeShop/1.jpeg" />
+  <meta property="og:url" content="https://tusitio.com" />
+
+  <link rel="icon" href="../imagen/logo.png" type="image/png" />
+  <title>MarkeShop</title>
+  <link rel="stylesheet" href="./style_form.css" />
+</head>
+<body>
+
+  <div class="menu">
+    <header class="navbar">
+      <div class="navbar-left">
+        <button id="menu-toggle" class="menu-icon">☰</button>
+      </div>
+
+      <div class="navbar-center">
+        <a href="../Inicio.html">
+          <img src="../imagen/logo.png" class="imagen" alt="Logo">
+        </a>
+      </div>
+    </header>
+  </div>
+
+  <nav id="side-menu" class="side-menu">
+    <ul>
+      
+      <li><a href="../index.html"><img src="../salir.png"  class="redee" alt="Salir" /></a></li>
+      <li><a href="../Inicio.html"><img src="../menu/1.png" class="rede" alt="Todo" />Todo</a></li>
+      <li><a href="../Eletronico.html"><img src="../menu/2.png" class="rede" alt="Electrónicos" />Electrónicos</a></li>
+      <li><a href="../Ropa.html"><img src="../menu/3.png" class="rede" alt="Ropa" />Ropa</a></li>
+      <li><a href="../Accesorios.html"><img src="../menu/4.png" class="rede" alt="Accesorios" />Accesorios</a></li>
+      <li><a href="../Otro.html"><img src="../menu/5.png" class="rede" alt="Otros" />Otros</a></li>
+      <li><a href="../form/form.html"   class="active"><img src="../menu/6.png" class="rede" alt="Otros" />Agregar Articulos</a></li>
+    </ul>
+  </nav>
+
+  <form id="product-form">
+  <h2>📦 Subir Producto</h2>
+
+  <input type="text" id="titulo" placeholder="📌 Nombre del producto" required />
+  <input type="text" id="descripcion" placeholder="📝 Descripción" required />
+  <input type="number" id="precio" placeholder="💰 Precio" required />
+
+  <select id="estado">
+    <option value="nuevo">🆕 Nuevo</option>
+    <option value="usado">♻️ Usado</option>
+  </select>
+
+  <select id="categoria" required>
+    <option value="">🔽 Selecciona una categoría</option>
+    <option value="Electrónicos">💻 Electrónicos</option>
+    <option value="Ropa">👕 Ropa</option>
+    <option value="Accesorios">👜 Accesorios</option>
+    <option value="Otros">📦 Otros</option>
+  </select>
+
+  <input type="text" id="vendedor" placeholder="🧑‍💼 Vendedor (mínimo 10 caracteres)" required />
+  <input type="text" id="whatsapp" placeholder="📱 Número de WhatsApp" required />
+  <input type="file" id="imagen" accept="image/*" multiple required />
+  
+  <div id="imagePreview"></div>
+
+  <button type="submit" id="submit-btn">🚀 Subir producto</button>
+  <span id="spinner">⏳</span>
+</form>
+
+<script type="module" src="./form.js"></script>
+
+</body>
+</html>
