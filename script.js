@@ -309,41 +309,34 @@ function mezclarArray(array) {
     });
   }
 });
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registrado', reg))
-      .catch(err => console.error('Error registrando Service Worker:', err));
-  });
-}
 
 let deferredPrompt;
-const btnInstall = document.getElementById('btn-install');
-document.getElementById('btn-install').style.display = 'block';
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Previene que el navegador muestre el diálogo automáticamente
-  e.preventDefault();
-  // Guarda el evento para usarlo más tarde
+  e.preventDefault(); // Evita que el navegador muestre el banner por defecto
   deferredPrompt = e;
-  // Muestra el botón
-  btnInstall.style.display = 'block';
-});
+  console.log('👍 Evento beforeinstallprompt capturado');
 
-btnInstall.addEventListener('click', async () => {
-  // Oculta el botón para que no se pueda pulsar varias veces
-  btnInstall.style.display = 'none';
-  if (deferredPrompt) {
-    // Muestra el diálogo de instalación
-    deferredPrompt.prompt();
-    // Espera la respuesta del usuario
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
-      console.log('Usuario aceptó la instalación');
-    } else {
-      console.log('Usuario rechazó la instalación');
-    }
-    // Limpia el evento guardado
-    deferredPrompt = null;
+
+
+  document.getElementById('btn-install').style.display = 'block';
+  // Mostrar un botón personalizado, por ejemplo:
+  const btnInstalar = document.getElementById('btn-instalar');
+  if (btnInstalar) {
+    btnInstalar.style.display = 'block';
+    btnInstalar.addEventListener('click', () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choiceResult => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('✅ Usuario aceptó la instalación');
+          } else {
+            console.log('❌ Usuario rechazó la instalación');
+          }
+          deferredPrompt = null;
+        });
+      }
+    });
   }
 });
+
