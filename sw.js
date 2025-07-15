@@ -1,10 +1,10 @@
 const CACHE_NAME = 'markeshop-cache-v1';
 const URLS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icono-192.png',
-  '/icono-512.png'
+  './',
+  './index.html',
+  './manifest.json',
+  './icono-192.png',
+  './icono-512.png'
 ];
 
 // Instalar: guardar archivos en caché
